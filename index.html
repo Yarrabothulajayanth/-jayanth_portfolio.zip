@@ -18,7 +18,6 @@
             --accent-orange: #ff9800;
             --accent-teal: #00bcd4;
             --accent-green: #4caf50;
-            --accent-red: #e74c3c;
             --dark-bg: #0f1419;
             --light-bg: #f8f9fa;
             --card-bg: #ffffff;
@@ -35,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -55,7 +53,6 @@
             padding: 20px;
         }
 
-        /* Sidebar Navigation */
         .sidebar-nav {
             position: fixed;
             left: -300px;
@@ -112,7 +109,6 @@
             font-size: 1.2em;
         }
 
-        /* Header Section */
         .header {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-teal) 100%);
             color: white;
@@ -136,18 +132,6 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(20px); }
@@ -167,23 +151,26 @@
             height: 150px;
             border-radius: 50%;
             border: 5px solid white;
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3em;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .profile-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .profile-photo.placeholder {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
         }
 
         .header-text h1 {
@@ -229,7 +216,6 @@
             text-decoration: none;
         }
 
-        /* Main Content */
         .content {
             background: white;
             padding: 50px;
@@ -238,7 +224,6 @@
             margin-bottom: 40px;
         }
 
-        /* Section Styles */
         section {
             margin-bottom: 50px;
         }
@@ -280,7 +265,6 @@
             font-weight: 600;
         }
 
-        /* Summary Section */
         .summary-text {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
             padding: 25px 30px;
@@ -292,20 +276,6 @@
             overflow: hidden;
         }
 
-        .summary-text::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-teal) 100%);
-            opacity: 0.1;
-            border-radius: 50%;
-            transform: translate(50%, -50%);
-        }
-
-        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -387,7 +357,6 @@
             color: var(--primary-color);
         }
 
-        /* Experience Card */
         .experience-card {
             background: white;
             border: 2px solid var(--border-color);
@@ -493,7 +462,6 @@
             box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
-        /* Project Card */
         .project-card {
             background: white;
             border: 2px solid var(--border-color);
@@ -579,7 +547,6 @@
             margin-top: 15px;
         }
 
-        /* Certifications */
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -596,18 +563,6 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
-        }
-
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            opacity: 0.05;
-            border-radius: 50%;
         }
 
         .cert-card:hover {
@@ -634,7 +589,6 @@
             margin-bottom: 8px;
         }
 
-        /* Achievements */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -685,7 +639,6 @@
             line-height: 1.5;
         }
 
-        /* Footer */
         .footer {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-teal) 100%);
             color: white;
@@ -720,13 +673,6 @@
             transform: translateY(-2px);
         }
 
-        .footer-text {
-            font-size: 0.95em;
-            opacity: 0.95;
-            margin-bottom: 15px;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -752,14 +698,6 @@
                 font-size: 2em;
             }
 
-            .header-text p {
-                font-size: 1.1em;
-            }
-
-            .contact-info {
-                justify-content: center;
-            }
-
             .content {
                 padding: 30px 20px;
             }
@@ -779,61 +717,6 @@
             section h2 {
                 font-size: 1.5em;
             }
-
-            .experience-header,
-            .project-header {
-                flex-direction: column;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .footer-links a {
-                justify-content: center;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-            }
-
-            .container {
-                max-width: 100%;
-            }
-
-            .menu-toggle {
-                display: none;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-
-            .experience-card,
-            .project-card {
-                box-shadow: none;
-                border: 1px solid var(--border-color);
-            }
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
         }
     </style>
 </head>
@@ -859,9 +742,9 @@
 
     <div class="container">
         <!-- Header -->
-        <div class="header fade-in">
+        <div class="header">
             <div class="header-content">
-                <div class="profile-photo placeholder" id="profilePhoto">
+                <div class="profile-photo" id="profilePhoto" title="Click to upload photo">
                     <i class="fas fa-user-circle"></i>
                 </div>
                 <div class="header-text">
@@ -878,10 +761,10 @@
                             <i class="fas fa-map-marker-alt"></i> Bengaluru
                         </div>
                         <div class="contact-item">
-                            <a href="https://github.com/Yarrabothulajayanth"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Yarrabothulajayanth" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                         <div class="contact-item">
-                            <a href="https://linkedin.com/in/yarrabothulajayanth"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://linkedin.com/in/yarrabothulajayanth" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                         </div>
                     </div>
                 </div>
@@ -891,7 +774,7 @@
         <!-- Main Content -->
         <div class="content">
             <!-- Summary Section -->
-            <section id="summary" class="fade-in">
+            <section id="summary">
                 <h2><i class="fas fa-lightbulb"></i> PROFESSIONAL SUMMARY</h2>
                 <div class="summary-text">
                     Final-year B.Tech (AI & Data Science) student with <strong>8+ months of hands-on internship experience</strong> in ServiceNow development, Generative AI, and Data Analytics. Skilled in SQL, Python, Power BI, and Excel for comprehensive data analysis and dashboarding. Experienced in translating Business Requirements Documents (BRDs) into actionable workflows, validating data against control totals, and presenting ML-backed insights to non-technical stakeholders. Self-driven, cross-functional team player with strong written and verbal communication skills.
@@ -899,7 +782,7 @@
             </section>
 
             <!-- Skills Section -->
-            <section id="skills" class="fade-in">
+            <section id="skills">
                 <h2><i class="fas fa-tools"></i> CORE SKILLS</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
@@ -946,7 +829,7 @@
             </section>
 
             <!-- Experience Section -->
-            <section id="experience" class="fade-in">
+            <section id="experience">
                 <h2><i class="fas fa-briefcase"></i> INTERNSHIP EXPERIENCE</h2>
 
                 <div class="experience-card">
@@ -1083,7 +966,7 @@
             </section>
 
             <!-- Projects Section -->
-            <section id="projects" class="fade-in">
+            <section id="projects">
                 <h2><i class="fas fa-rocket"></i> PROJECTS</h2>
 
                 <div class="project-card">
@@ -1196,7 +1079,7 @@
             </section>
 
             <!-- Achievements Section -->
-            <section id="achievements" class="fade-in">
+            <section id="achievements">
                 <h2><i class="fas fa-trophy"></i> KEY ACHIEVEMENTS</h2>
                 <div class="achievements-grid">
                     <div class="achievement-card">
@@ -1227,7 +1110,7 @@
             </section>
 
             <!-- Certifications Section -->
-            <section id="certifications" class="fade-in">
+            <section id="certifications">
                 <h2><i class="fas fa-certificate"></i> CERTIFICATIONS</h2>
                 <div class="cert-grid">
                     <div class="cert-card">
@@ -1274,7 +1157,7 @@
             </section>
 
             <!-- Education Section -->
-            <section id="education" class="fade-in">
+            <section id="education">
                 <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
                 <div class="experience-card">
                     <div class="experience-header">
@@ -1291,12 +1174,12 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer fade-in" id="contact">
+        <div class="footer" id="contact">
             <div class="footer-links">
-                <a href="mailto:yarrabothula1000@gmail.com">
+                <a href="mailto:yarrabothula1000@gmail.com" target="_blank">
                     <i class="fas fa-envelope"></i> Email
                 </a>
-                <a href="tel:+916300743424">
+                <a href="tel:+916300743424" target="_blank">
                     <i class="fas fa-phone"></i> Call
                 </a>
                 <a href="https://linkedin.com/in/yarrabothulajayanth" target="_blank">
@@ -1306,10 +1189,10 @@
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
-            <div class="footer-text">
+            <div style="font-size: 0.95em; opacity: 0.95; margin-bottom: 15px;">
                 Let's connect and discuss data analytics, AI/ML projects, or career opportunities!
             </div>
-            <p style="font-size: 0.85em; opacity: 0.8; margin-top: 15px;">
+            <p style="font-size: 0.85em; opacity: 0.8;">
                 📍 Bengaluru | Last Updated: May 18, 2026
             </p>
         </div>
@@ -1320,50 +1203,42 @@
         const menuToggle = document.getElementById('menuToggle');
         const sidebarNav = document.getElementById('sidebarNav');
 
-        menuToggle.addEventListener('click', () => {
-            sidebarNav.classList.toggle('active');
-        });
-
-        // Close sidebar when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                sidebarNav.classList.remove('active');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                sidebarNav.classList.toggle('active');
             });
-        });
 
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebarNav.classList.remove('active');
+                });
             });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Handle profile photo upload
-        function handlePhotoUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const profilePhoto = document.getElementById('profilePhoto');
-                    profilePhoto.innerHTML = `<img src="${e.target.result}" alt="Profile Photo">`;
-                };
-                reader.readAsDataURL(file);
-            }
         }
 
-        // Optional: Listen for drag and drop on profile photo
+        // Handle profile photo upload
         const profilePhoto = document.getElementById('profilePhoto');
+        
+        profilePhoto.style.cursor = 'pointer';
+        profilePhoto.title = 'Click to upload your photo';
+
+        profilePhoto.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        profilePhoto.innerHTML = `<img src="${e.target.result}" alt="Profile Photo">`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+
+        // Drag and drop support
         profilePhoto.addEventListener('dragover', (e) => {
             e.preventDefault();
             profilePhoto.style.opacity = '0.7';
@@ -1376,7 +1251,7 @@
         profilePhoto.addEventListener('drop', (e) => {
             e.preventDefault();
             const files = e.dataTransfer.files;
-            if (files.length > 0) {
+            if (files.length > 0 && files[0].type.startsWith('image/')) {
                 const file = files[0];
                 const reader = new FileReader();
                 reader.onload = (event) => {
@@ -1387,13 +1262,15 @@
             profilePhoto.style.opacity = '1';
         });
 
-        profilePhoto.style.cursor = 'pointer';
-        profilePhoto.addEventListener('click', () => {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = handlePhotoUpload;
-            input.click();
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>
