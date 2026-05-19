@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yarrabothula Jayanth - Fresher Data Analyst</title>
+    <title>Yarrabothula Jayanth - Data Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -32,7 +32,7 @@
         <div class="header">
             <div class="header-content">
                 <div class="profile-photo" id="profilePhoto" title="Click to upload photo">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwEAwMDAwcEBAwMDAwMDBcPDAxMDAwMDBcPDw8NDAwMDBcPDw8NDAwMDD/2wBDAQICAgMDAwYDAwYMCAc[...]" alt="Profile Photo">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwEAwMDAwcEBAwMDAwMDBcPDAxMDAwMDBcPDw8NDAwMDBcPDw8NDAwMDD/2wBDAQICAgMDAwYDAwYMCAcIDAwYDAwwDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDD/wAARCAB4AHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="Profile Photo">
                 </div>
                 <div class="header-text">
                     <h1>YARRABOTHULA JAYANTH</h1>
@@ -379,53 +379,124 @@
             <section id="certifications">
                 <h2><i class="fas fa-certificate"></i> CERTIFICATIONS</h2>
                 <div class="cert-grid">
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-servicenow">
                         <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h4>ServiceNow Developer Certification</h4>
                         <p>APSCHE SkillDzire</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-genai">
                         <div class="cert-icon"><i class="fas fa-brain"></i></div>
                         <h4>Generative AI with IBM Cloud</h4>
                         <p>APSCHE SkillDzire</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-dellotie">
                         <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
                         <h4>Data Analytics Certificate</h4>
                         <p>Dellotie Data Solutions</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-python">
                         <div class="cert-icon"><i class="fas fa-python"></i></div>
                         <h4>Python & Data Science</h4>
                         <p>Pantech Solutions</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-sql">
                         <div class="cert-icon"><i class="fas fa-database"></i></div>
                         <h4>SQL & Database Fundamentals</h4>
                         <p>IBM ExcelUp Academy</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-viz">
                         <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
                         <h4>Data Visualization & Analytics</h4>
                         <p>IBM ExcelUp Academy</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-r">
                         <div class="cert-icon"><i class="fas fa-code"></i></div>
                         <h4>R Programming with IBM</h4>
                         <p>IBM ExcelUp Academy</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-deeplearn">
                         <div class="cert-icon"><i class="fas fa-layer-group"></i></div>
                         <h4>Deep Learning Fundamentals</h4>
                         <p>Pantech Solutions</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" id="cert-ml">
                         <div class="cert-icon"><i class="fas fa-robot"></i></div>
                         <h4>Machine Learning Basics</h4>
                         <p>Pantech Solutions</p>
+                        <img class="cert-image-preview" style="display: none;" alt="Certificate">
+                        <div class="cert-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag certificate image here or click to upload</p>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="remove-btn-container"></div>
                     </div>
                 </div>
             </section>
+
+            <!-- Image Modal -->
+            <div id="imageModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <img class="modal-image" src="" alt="Certificate">
+                </div>
+            </div>
 
             <!-- Education Section -->
             <section id="education">
@@ -441,7 +512,7 @@
             <section id="contact">
                 <h2><i class="fas fa-envelope"></i> GET IN TOUCH</h2>
                 <div class="summary-text">
-                    I'm actively seeking entry-level opportunities in data analytics, business intelligence, and data engineering roles. Let's connect and discuss how I can contribute to your team's success!
+                    I'm actively seeking entry-level opportunities in data analytics, business intelligence, and data engineering roles. Let's connect and discuss how I can contribute to your team!
                     <div style="margin-top: 20px;">
                         <p><strong>📧 Email:</strong> <a href="mailto:yarrabothula1000@gmail.com" style="color: #667eea;">yarrabothula1000@gmail.com</a></p>
                         <p><strong>📱 Phone:</strong> <a href="tel:+916300743424" style="color: #667eea;">+91 6300743424</a></p>
