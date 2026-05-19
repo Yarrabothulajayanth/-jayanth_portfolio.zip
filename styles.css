@@ -581,6 +581,102 @@ section h3 {
     margin-bottom: 8px;
 }
 
+.cert-image-preview {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    margin: 15px 0;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cert-image-preview:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+.cert-upload-area {
+    border: 2px dashed var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.cert-upload-area:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-color: var(--accent-orange);
+}
+
+.cert-upload-area.dragover {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: var(--accent-teal);
+}
+
+.cert-upload-area i {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.cert-upload-area p {
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.cert-upload-area input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.upload-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.remove-cert-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.remove-cert-btn:hover {
+    background: #ff5252;
+    transform: translateY(-1px);
+}
+
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -665,6 +761,69 @@ section h3 {
     transform: translateY(-2px);
 }
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -708,5 +867,9 @@ section h3 {
 
     section h2 {
         font-size: 1.5em;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
     }
 }
