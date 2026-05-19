@@ -3,722 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yarrabothula Jayanth - Data Analyst</title>
+    <title>Yarrabothula Jayanth - Fresher Data Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-orange: #ff9800;
-            --accent-teal: #00bcd4;
-            --accent-green: #4caf50;
-            --dark-bg: #0f1419;
-            --light-bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-dark: #2c3e50;
-            --text-light: #7f8c8d;
-            --border-color: #ecf0f1;
-        }
-
-        body {
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--light-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 5px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .sidebar-nav {
-            position: fixed;
-            left: -300px;
-            top: 0;
-            width: 300px;
-            height: 100vh;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            padding: 30px 0;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-        }
-
-        .sidebar-nav.active {
-            left: 0;
-        }
-
-        .nav-links {
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin: 0;
-        }
-
-        .nav-links a {
-            display: block;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            transition: all 0.3s;
-            border-left: 4px solid transparent;
-        }
-
-        .nav-links a:hover {
-            border-left-color: var(--accent-orange);
-            background: rgba(255, 255, 255, 0.1);
-            padding-left: 40px;
-        }
-
-        .menu-toggle {
-            display: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 999;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2em;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-teal) 100%);
-            color: white;
-            padding: 80px 60px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(20px); }
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .header-text h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .header-text p {
-            font-size: 1.4em;
-            margin-bottom: 25px;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            font-size: 0.95em;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 10px 15px;
-            border-radius: 25px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .content {
-            background: white;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        section:last-child {
-            margin-bottom: 0;
-        }
-
-        section h2 {
-            color: var(--primary-color);
-            font-size: 2em;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid transparent;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-            position: relative;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-orange) 0%, var(--accent-teal) 100%);
-            border-radius: 2px;
-        }
-
-        section h3 {
-            color: var(--secondary-color);
-            font-size: 1.4em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .summary-text {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-            padding: 25px 30px;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 10px;
-            font-size: 1.05em;
-            line-height: 1.8;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .skill-category {
-            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-orange));
-            background-size: 200% 100%;
-            animation: gradientFlow 3s ease infinite;
-        }
-
-        @keyframes gradientFlow {
-            0%, 100% { background-position: 0% 0%; }
-            50% { background-position: 100% 0%; }
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-        }
-
-        .skill-category h4 {
-            color: var(--primary-color);
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skill-category h4::before {
-            content: '';
-            width: 5px;
-            height: 20px;
-            background: linear-gradient(180deg, var(--accent-orange), var(--accent-teal));
-            border-radius: 3px;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            padding: 8px 0;
-            color: var(--text-dark);
-            transition: all 0.3s;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .skill-category li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
-
-        .skill-category li:hover {
-            padding-left: 25px;
-            color: var(--primary-color);
-        }
-
-        .experience-card {
-            background: white;
-            border: 2px solid var(--border-color);
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-        }
-
-        .experience-card:hover {
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-            transform: translateX(5px);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .experience-header h4 {
-            color: var(--primary-color);
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .experience-meta {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .company-name {
-            color: var(--secondary-color);
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .experience-card ul {
-            list-style: none;
-            margin: 15px 0;
-        }
-
-        .experience-card li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .experience-card li::before {
-            content: '▪';
-            position: absolute;
-            left: 0;
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
-
-        .tech-stack-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            color: var(--primary-color);
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            margin: 5px 5px 5px 0;
-            border: 1px solid var(--primary-color);
-            transition: all 0.3s;
-        }
-
-        .tech-stack-badge:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .impact-badge {
-            background: linear-gradient(135deg, #4caf50, #66bb6a);
-            color: white;
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-weight: 600;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-        }
-
-        .project-card {
-            background: white;
-            border: 2px solid var(--border-color);
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--accent-orange), #ff6f00);
-        }
-
-        .project-card:hover {
-            box-shadow: 0 15px 40px rgba(255, 152, 0, 0.2);
-            transform: translateX(5px);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .project-header h4 {
-            color: var(--accent-orange);
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .project-type-badge {
-            background: linear-gradient(135deg, var(--accent-orange), #ff6f00);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .project-description {
-            background: linear-gradient(135deg, rgba(255, 152, 0, 0.05), rgba(255, 107, 0, 0.05));
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 3px solid var(--accent-orange);
-        }
-
-        .project-card ul {
-            list-style: none;
-            margin: 15px 0;
-        }
-
-        .project-card li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .project-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
-
-        .tech-stack-project {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .cert-card {
-            background: linear-gradient(135deg, white 0%, var(--light-bg) 100%);
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .cert-icon {
-            font-size: 3em;
-            color: var(--accent-orange);
-            margin-bottom: 10px;
-        }
-
-        .cert-card h4 {
-            color: var(--primary-color);
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .cert-card p {
-            color: var(--text-light);
-            font-size: 0.9em;
-            margin-bottom: 8px;
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .achievement-card {
-            background: linear-gradient(135deg, white 0%, var(--light-bg) 100%);
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .achievement-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-orange), var(--accent-teal), var(--accent-green));
-        }
-
-        .achievement-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .achievement-number {
-            font-size: 2.5em;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .achievement-text {
-            color: var(--text-dark);
-            font-size: 0.95em;
-            font-weight: 600;
-            line-height: 1.5;
-        }
-
-        .footer {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-teal) 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-links a:hover {
-            background: rgba(255, 255, 255, 0.35);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .header {
-                padding: 40px 30px;
-            }
-
-            .header-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-                margin: 0 auto;
-            }
-
-            .header-text h1 {
-                font-size: 2em;
-            }
-
-            .content {
-                padding: 30px 20px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .achievements-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section h2 {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -745,11 +32,11 @@
         <div class="header">
             <div class="header-content">
                 <div class="profile-photo" id="profilePhoto" title="Click to upload photo">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwEAwMDAwcEBAwMDAwMDBcPDAxMDAwMDBcPDw8NDAwMDBcPDw8NDAwMDD/2wBDAQICAgMDAwYDAwYMCAcIDAwIDAwIDAwMDAwMDAwIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDD/wAARCACQAJADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="Yarrabothula Jayanth">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwEAwMDAwcEBAwMDAwMDBcPDAxMDAwMDBcPDw8NDAwMDBcPDw8NDAwMDD/2wBDAQICAgMDAwYDAwYMCAc[...]" alt="Profile Photo">
                 </div>
                 <div class="header-text">
                     <h1>YARRABOTHULA JAYANTH</h1>
-                    <p>Data Analyst | Business Intelligence Professional</p>
+                    <p>📊 Fresher | Data Analyst | Seeking Growth Opportunities</p>
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i> +91 6300743424
@@ -777,7 +64,7 @@
             <section id="summary">
                 <h2><i class="fas fa-lightbulb"></i> PROFESSIONAL SUMMARY</h2>
                 <div class="summary-text">
-                    B.Tech (AI & Data Science) graduate seeking a data analyst role with <strong>8+ months of hands-on internship experience</strong> in ServiceNow development, Data Analytics, and Business Intelligence. Proven ability to translate business requirements into actionable insights, create impactful dashboards, and drive operational efficiency. Eager to leverage analytical skills and technical expertise to add value to a dynamic organization.
+                    B.Tech (AI & Data Science) graduate <strong>actively seeking entry-level data analyst roles</strong> with <strong>8+ months of hands-on internship experience</strong> in ServiceNow development, Data Analytics, Generative AI, and Business Intelligence. Eager to apply strong analytical and technical skills to solve real-world problems and contribute to organizational success. Open to all opportunities in data analytics, BI, and data engineering roles.
                 </div>
             </section>
 
@@ -881,6 +168,29 @@
                         <span class="tech-stack-badge">Python</span>
                         <span class="tech-stack-badge">NLP</span>
                         <span class="tech-stack-badge">Gradio</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h4>Data Analytics Intern</h4>
+                            <div class="company-name">Dellotie Data Solutions</div>
+                        </div>
+                        <span class="experience-meta"><i class="fas fa-clock"></i> 1 Month | ✓ Certified</span>
+                    </div>
+                    <p><strong>Data Analytics & Business Intelligence</strong></p>
+                    <ul>
+                        <li>Performed exploratory data analysis on large datasets using SQL and Python</li>
+                        <li>Created interactive Power BI dashboards for business metrics visualization</li>
+                        <li>Developed data profiling and validation frameworks for data quality assurance</li>
+                        <li>Generated actionable insights and reports for stakeholder decision-making</li>
+                    </ul>
+                    <div class="tech-stack-project">
+                        <span class="tech-stack-badge">SQL</span>
+                        <span class="tech-stack-badge">Python</span>
+                        <span class="tech-stack-badge">Power BI</span>
+                        <span class="tech-stack-badge">Data Validation</span>
                     </div>
                 </div>
 
@@ -1000,39 +310,67 @@
                         Enterprise-level Service Catalog automation for automotive showroom operations with significant error reduction.
                     </div>
                     <ul>
-                        <li>Designed and implemented automated approval workflows using Flow Designer</li>
-                        <li>Created 8+ advanced analytics dashboards for operational insights</li>
-                        <li>Reduced manual data processing by 70% through automation</li>
-                        <li>Performed comprehensive data validation and quality assurance</li>
+                        <li>Designed and built automated Service Catalog reducing manual errors by 70%</li>
+                        <li>Implemented multi-level approval workflows using Flow Designer</li>
+                        <li>Created 8+ dashboards tracking request volumes and approval metrics</li>
+                        <li>Achieved 99% data reconciliation accuracy</li>
                     </ul>
                     <div class="tech-stack-project">
                         <span class="tech-stack-badge">ServiceNow</span>
                         <span class="tech-stack-badge">Flow Designer</span>
-                        <span class="tech-stack-badge">CMDB</span>
-                        <span class="tech-stack-badge">Analytics</span>
+                        <span class="tech-stack-badge">Dashboards</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h4>Health AI – Healthcare Assistant</h4>
+                        <span class="project-type-badge">May – Jun 2025</span>
+                    </div>
+                    <div class="project-description">
+                        AI-powered healthcare chatbot leveraging NLP to process and respond to medical queries with high accuracy.
+                    </div>
+                    <ul>
+                        <li>Built data processing pipeline handling 10,000+ medical queries</li>
+                        <li>Developed NLP categorization model achieving 92% accuracy</li>
+                        <li>Created interactive Gradio dashboard for stakeholder visualization</li>
+                        <li>Reduced query processing time by 80%</li>
+                    </ul>
+                    <div class="tech-stack-project">
+                        <span class="tech-stack-badge">IBM Granite LLM</span>
+                        <span class="tech-stack-badge">Python</span>
+                        <span class="tech-stack-badge">NLP</span>
                     </div>
                 </div>
             </section>
 
             <!-- Achievements Section -->
             <section id="achievements">
-                <h2><i class="fas fa-trophy"></i> ACHIEVEMENTS</h2>
+                <h2><i class="fas fa-trophy"></i> KEY ACHIEVEMENTS</h2>
                 <div class="achievements-grid">
                     <div class="achievement-card">
-                        <div class="achievement-number">8+</div>
-                        <div class="achievement-text">Months of Internship Experience</div>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="achievement-number">15+</div>
-                        <div class="achievement-text">Dashboards Created</div>
-                    </div>
-                    <div class="achievement-card">
                         <div class="achievement-number">70%</div>
-                        <div class="achievement-text">Efficiency Improvement Achieved</div>
+                        <p class="achievement-text">Reduction in manual processing time</p>
                     </div>
                     <div class="achievement-card">
-                        <div class="achievement-number">6</div>
-                        <div class="achievement-text">Professional Certifications</div>
+                        <div class="achievement-number">80%</div>
+                        <p class="achievement-text">Time savings through automation</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">92%</div>
+                        <p class="achievement-text">Accuracy in NLP model performance</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">99.8%</div>
+                        <p class="achievement-text">Data validation accuracy</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">8+</div>
+                        <p class="achievement-text">Months internship experience</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">9</div>
+                        <p class="achievement-text">Professional certifications earned</p>
                     </div>
                 </div>
             </section>
@@ -1042,59 +380,74 @@
                 <h2><i class="fas fa-certificate"></i> CERTIFICATIONS</h2>
                 <div class="cert-grid">
                     <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>ServiceNow Developer</h4>
+                        <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h4>ServiceNow Developer Certification</h4>
                         <p>APSCHE SkillDzire</p>
-                        <p style="font-size: 0.8em; color: var(--text-light);">2026</p>
                     </div>
                     <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Generative AI & LLMs</h4>
+                        <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                        <h4>Generative AI with IBM Cloud</h4>
                         <p>APSCHE SkillDzire</p>
-                        <p style="font-size: 0.8em; color: var(--text-light);">2025</p>
                     </div>
                     <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Data Analytics</h4>
+                        <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Data Analytics Certificate</h4>
+                        <p>Dellotie Data Solutions</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-python"></i></div>
+                        <h4>Python & Data Science</h4>
                         <p>Pantech Solutions</p>
-                        <p style="font-size: 0.8em; color: var(--text-light);">2025</p>
                     </div>
                     <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Python Development</h4>
+                        <div class="cert-icon"><i class="fas fa-database"></i></div>
+                        <h4>SQL & Database Fundamentals</h4>
+                        <p>IBM ExcelUp Academy</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h4>Data Visualization & Analytics</h4>
+                        <p>IBM ExcelUp Academy</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-code"></i></div>
+                        <h4>R Programming with IBM</h4>
+                        <p>IBM ExcelUp Academy</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-layer-group"></i></div>
+                        <h4>Deep Learning Fundamentals</h4>
                         <p>Pantech Solutions</p>
-                        <p style="font-size: 0.8em; color: var(--text-light);">2025</p>
                     </div>
                     <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Data Engineering</h4>
+                        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                        <h4>Machine Learning Basics</h4>
                         <p>Pantech Solutions</p>
-                        <p style="font-size: 0.8em; color: var(--text-light);">2025</p>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Salesforce Administration</h4>
-                        <p>Hands-on Training</p>
-                        <p style="font-size: 0.8em; color: var(--text-light);">2025</p>
                     </div>
                 </div>
             </section>
 
             <!-- Education Section -->
             <section id="education">
-                <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+                <h2><i class="fas fa-book"></i> EDUCATION</h2>
                 <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h4>B.Tech in Artificial Intelligence & Data Science</h4>
-                            <div class="company-name">Graduation: 2026</div>
-                        </div>
+                    <h3>B.Tech in Artificial Intelligence & Data Science</h3>
+                    <p><strong>Annamacharya Institute of Technology and Sciences, Kadapa, AP</strong></p>
+                    <p><strong>Duration:</strong> Nov 2022 – May 2026 | <strong>CGPA:</strong> 8.35/10.00</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2><i class="fas fa-envelope"></i> GET IN TOUCH</h2>
+                <div class="summary-text">
+                    I'm actively seeking entry-level opportunities in data analytics, business intelligence, and data engineering roles. Let's connect and discuss how I can contribute to your team's success!
+                    <div style="margin-top: 20px;">
+                        <p><strong>📧 Email:</strong> <a href="mailto:yarrabothula1000@gmail.com" style="color: #667eea;">yarrabothula1000@gmail.com</a></p>
+                        <p><strong>📱 Phone:</strong> <a href="tel:+916300743424" style="color: #667eea;">+91 6300743424</a></p>
+                        <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/yarrabothulajayanth" target="_blank" style="color: #667eea;">linkedin.com/in/yarrabothulajayanth</a></p>
+                        <p><strong>🔗 GitHub:</strong> <a href="https://github.com/Yarrabothulajayanth" target="_blank" style="color: #667eea;">github.com/Yarrabothulajayanth</a></p>
                     </div>
-                    <ul>
-                        <li>Relevant Coursework: Data Structures, Machine Learning, Database Management, Business Analytics</li>
-                        <li>Strong foundation in data analysis, statistical methods, and business intelligence</li>
-                        <li>Hands-on experience with industry-standard tools and platforms</li>
-                    </ul>
                 </div>
             </section>
         </div>
@@ -1102,34 +455,16 @@
         <!-- Footer -->
         <div class="footer">
             <div class="footer-links">
-                <a href="https://github.com/Yarrabothulajayanth" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://linkedin.com/in/yarrabothulajayanth" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="mailto:yarrabothula1000@gmail.com">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
+                <a href="mailto:yarrabothula1000@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/yarrabothulajayanth" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Yarrabothulajayanth" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="tel:+916300743424"><i class="fas fa-phone"></i> Call</a>
             </div>
-            <p>&copy; 2026 Yarrabothula Jayanth. All rights reserved.</p>
+            <p>🚀 Open to all opportunities in Data Analytics, BI, and Data Engineering</p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">Last Updated: May 19, 2026</p>
         </div>
     </div>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const sidebarNav = document.getElementById('sidebarNav');
-        const navLinks = sidebarNav.querySelectorAll('a');
-
-        menuToggle.addEventListener('click', () => {
-            sidebarNav.classList.toggle('active');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                sidebarNav.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
